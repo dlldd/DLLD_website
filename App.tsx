@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header, { ViewType as BaseViewType } from './components/Header';
 import WorkGrid from './components/WorkGrid';
@@ -72,7 +71,7 @@ const App: React.FC = () => {
         title: '2023 SBS 가요대전\n굿즈 디자인',
         category: WorkCategory.Graphic,
         year: '2023',
-        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/sbs%20%E1%84%80%E1%85%A1%E1%84%8B%E1%85%AD%E1%84%83%E1%85%A2%E1%84%8C%E1%85%A5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A15.jpg',
+        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/sbs%20%E1%84%80%E1%85%A1%E1%84%8B%E1%85%AD%E1%84%83%E1%85%A2%E1%84%8C%E1%85%A5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A13.jpg',
         description: "2023 SBS 가요대전 캐릭터 달토를 이용한 굿즈 디자인 B안 입니다. 축제의 생동감을 굿즈 아이템 전반에 녹여냈습니다.",
         client: 'SBS',
         hideMainImageInDetail: true,
@@ -121,7 +120,7 @@ const App: React.FC = () => {
         galleryImages: [
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-01.jpg',
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-02.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%82%E1%85%B2%E1%84%83%E1%85%A1%E1%86%AB-07.jpg'
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%82%E1%85%B2%E1%84%83%E1%85%A1%E1%86%BC-07.jpg'
         ]
       },
       {
@@ -251,62 +250,46 @@ const App: React.FC = () => {
       {
         id: '16',
         title: "제9회 비건페스티벌 'Vegan Now' 디자인",
-        category: WorkCategory.Package,
-        year: '2024',
+        category: "Visual Identity",
+        year: '2021',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "오설록의 프리미엄 라인을 위한 지함 패키지 디자인입니다. 제주의 사계절을 담은 서정적인 컬러와 정갈한 레이아웃을 통해 차(Tea)가 주는 평온한 가치를 시각화했습니다.",
-        client: 'Amorepacific (Osulloc)',
+        description: "coming soon",
+        client: 'Vegan Festival Korea',
         hideMainImageInDetail: true,
-        galleryImages: [
-          'https://images.unsplash.com/photo-1594631252845-29fc45865157?q=80&w=1974&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1544787210-2213d2427507?q=80&w=1974&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1974&auto=format&fit=crop'
-        ]
+        galleryImages: []
       },
       {
         id: '15',
         title: 'Coming Soon',
-        category: WorkCategory.Graphic,
-        year: '2024',
+        category: "",
+        year: '',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "글로벌 K-컬처 페스티벌 KCON의 2024년 메인 그래픽입니다. '연결'과 '확장'이라는 키워드를 입체적인 기하학 패턴과 강렬한 타이포그래피로 표현하여 축제의 현장감을 극대화했습니다.",
-        client: 'CJ ENM',
+        description: "coming soon",
+        client: '',
         hideMainImageInDetail: true,
-        galleryImages: [
-          'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1514525253344-f814d0743b17?q=80&w=2064&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop'
-        ]
+        galleryImages: []
       },
       {
         id: '14',
         title: 'Coming Soon',
-        category: WorkCategory.Brand,
-        year: '2023',
+        category: "",
+        year: '',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "현대카드 디자인 라이브러리의 아이덴티티를 공간과 인쇄물 전반에 유기적으로 연결했습니다. 정제된 레이아웃과 서체 사용을 통해 몰입감 있는 브랜드 경험을 제공합니다.",
-        client: 'Hyundai Card',
+        description: "coming soon",
+        client: '',
         hideMainImageInDetail: true,
-        galleryImages: [
-          'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1517502474097-f9b30659dadb?q=80&w=1927&auto=format&fit=crop'
-        ]
+        galleryImages: []
       },
       {
         id: '13',
         title: 'Coming Soon',
-        category: WorkCategory.Character,
-        year: '2024',
+        category: "",
+        year: '',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "삼양식품의 상징적인 캐릭터 '호치'를 현대적인 3D 스타일과 플랫 그래픽으로 리디자인했습니다. 캐릭터의 위트와 에너지를 유지하면서도 다양한 매체에 최적화된 비주얼 시스템을 구축했습니다.",
-        client: 'Samyang Foods',
+        description: "coming soon",
+        client: '',
         hideMainImageInDetail: true,
-        galleryImages: [
-          'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=1974&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1585298723682-7115561c51b7?q=80&w=1964&auto=format&fit=crop'
-        ]
+        galleryImages: []
       }
     ];
   });
@@ -396,7 +379,7 @@ const App: React.FC = () => {
       {/* Intro Overlay */}
       {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
       
-      {/* Main UI: 인트로가 끝나거나 진행 중일 때 투명하게 뒤에 존재 */}
+      {/* Main UI */}
       <div className={showIntro ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
         {!isMinimalView && (
           <Header 
