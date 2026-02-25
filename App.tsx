@@ -31,48 +31,55 @@ const App: React.FC = () => {
     LOGO: 'dlld_logo',
     ACCENT: 'dlld_accent',
     ABOUT: 'dlld_about',
-    GROWTH: 'dlld_growth'
+    GROWTH: 'dlld_growth',
+    VERSION: 'dlld_data_version'
   };
 
+  const CURRENT_VERSION = '1.5'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+
   const [projects, setProjects] = useState<Project[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.PROJECTS);
-    return saved ? JSON.parse(saved) : [
-      {
-        id: '9',
-        title: "프렌차이즈 디저트 브랜드\n'치키차카초코' 브랜딩",
-        category: WorkCategory.Brand,
-        year: '2024',
-        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/refs/heads/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png',
-        description: "프렌차이즈 디저트 카페 치키차카초코의 통합 브랜드 아이덴티티 디자인입니다.",
-        client: '치키차카초코',
-        hideMainImageInDetail: true,
-        galleryImages: [
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.54.56.png',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.55.10.png',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/refs/heads/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/4_102844.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/SU1HXzk4MDAuanBlZw%3D%3D.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/output_2197159711.jpg'
-        ]
-      },
-      {
-        id: '5',
-        title: 'GS25x치키차카초코\n찰깨크림빵 패키지',
-        category: WorkCategory.Package,
-        year: '2024',
-        imageUrl: PACKAGE_HERO_IMAGE_URL,
-        description: "GS25와 디저트 브랜드 치키차카초코의 컬래버레이션 패키지 디자인입니다. 힙하고 트렌디한 감각을 패키지에 담았습니다.",
-        client: 'GS25',
-        hideMainImageInDetail: true,
-        galleryImages: ['https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_gs2.png']
-      },
+    const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
+    const savedProjects = localStorage.getItem(STORAGE_KEYS.PROJECTS);
+    
+    if (savedVersion !== CURRENT_VERSION || !savedProjects) {
+      localStorage.setItem(STORAGE_KEYS.VERSION, CURRENT_VERSION);
+      return [
+        {
+          id: '9',
+          title: "프렌차이즈 디저트 브랜드\n'치키차카초코' 브랜딩",
+          category: WorkCategory.Brand,
+          year: '2024',
+          imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/refs/heads/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png',
+          description: "브랜드의 핵심 자산이 되는 캐릭터를 개발하고, 이를 중심으로 한 비주얼 아이덴티티를 설계했습니다. 캐릭터의 성격과 세계관을 반영해 로고, 컬러, 그래픽 요소를 확장 가능한 구조로 정리했습니다.\n브랜드 확장 이후에는 20개 이상 지점의 외부·내부 사이니지 및 공간 그래픽을 직접 디자인하며, 각 매장에서도 동일한 브랜드 경험이 구현되도록 전반적인 시각 시스템을 운영했습니다.",
+          client: '치키차카초코',
+          hideMainImageInDetail: true,
+          galleryImages: [
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.54.56.png',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.55.10.png',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/refs/heads/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/4_102844.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/SU1HXzk4MDAuanBlZw%3D%3D.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/output_2197159711.jpg'
+          ]
+        },
+        {
+          id: '5',
+          title: 'GS25x치키차카초코\n찰깨크림빵 패키지',
+          category: WorkCategory.Package,
+          year: '2024',
+          imageUrl: PACKAGE_HERO_IMAGE_URL,
+          description: "100만개 이상 판매, GS25 디저트 카테고리 매출 1·2위를 기록한 치키차카초코 패키지 디자인을 진행했습니다.\n브랜드 캐릭터와 맛의 특징을 강조한 컬러 시스템을 통해 제품 인지도를 빠르게 확산시켰으며, 시리즈 간 일관성과 맛별 구분을 동시에 고려한 디자인으로 구매 전환을 극대화했습니다.",
+          client: 'GS25',
+          hideMainImageInDetail: true,
+          galleryImages: ['https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_gs2.png']
+        },
       {
         id: '4',
         title: '2023 SBS 가요대전\n굿즈 디자인',
         category: WorkCategory.Graphic,
         year: '2023',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/sbs%20%E1%84%80%E1%85%A1%E1%84%8B%E1%85%AD%E1%84%83%E1%85%A2%E1%84%8C%E1%85%A5%E1%86%AB_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A13.jpg',
-        description: "2023 SBS 가요대전 캐릭터 달토를 이용한 굿즈 디자인 B안 입니다. 축제의 생동감을 굿즈 아이템 전반에 녹여냈습니다.",
+        description: "2023 SBS 가요대전 캐릭터 달토를 이용한 굿즈 디자인을 진행했습니다.\n\nY2K 감성과 ‘달에서 온 토끼’라는 컨셉이 자연스럽게 어우러지도록 디자인했습니다. 단순히 캐릭터를 배치하는 것이 아니라, 트렌디한 요소를 가미하고 컬러감과 레이아웃을 조정해 브랜드의 콘셉트를 더욱 강조했습니다. \n\n(캐릭터 협업 작업으로 캐릭터 달토를 이용한 작업 입니다.)",
         client: 'SBS',
         hideMainImageInDetail: true,
         galleryImages: [
@@ -119,8 +126,7 @@ const App: React.FC = () => {
         hideMainImageInDetail: true,
         galleryImages: [
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-01.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-02.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%82%E1%85%B2%E1%84%83%E1%85%A1%E1%86%BC-07.jpg'
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-02.jpg'
         ]
       },
       {
@@ -129,7 +135,7 @@ const App: React.FC = () => {
         category: WorkCategory.Brand,
         year: '2024',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%82%E1%85%B2%E1%84%83%E1%85%A1%E1%86%BC-01.jpg',
-        description: "연남동에 오픈한 저당 전문 아이스크림 브랜드 뉴당의 브랜드 아이덴티티입니다. 달콤함과 건강함의 균형을 시각화했습니다.",
+        description: "뉴당(NewDang)은 ‘새로운 당을 정의한다’는 의미를 담은 저당 아이스크림 브랜드 IP입니다. 기존의 달콤함 중심 디저트 문화를 넘어, 가볍고 부담 없는 단맛의 기준을 제안합니다.\n\n메인 캐릭터 ‘당이’는 뉴당의 철학을 상징하는 마스코트로, ‘뉴당’ 깃발을 들고 새로운 당의 기준을 알리는 역할을 합니다. 함께하는 펭귄 캐릭터들은 브랜드의 가벼움과 즐거움을 시각적으로 확장하며, 아이스크림이 주는 차가움과 청량한 이미지를 강화합니다.\n\n뉴당 IP는 패키지, 굿즈, 공간 브랜딩 등 다양한 접점에서 확장 가능한 구조로 설계되었습니다.",
         client: '달당',
         hideMainImageInDetail: true,
         galleryImages: [
@@ -152,7 +158,7 @@ const App: React.FC = () => {
         category: WorkCategory.Brand, 
         year: '2024', 
         imageUrl: BRAND_HERO_IMAGE_URL, 
-        description: "우리는 브랜드의 핵심 키워드인 '연결'과 '성장'을 시각화하기 위해 유연한 곡선과 정갈한 서체를 제안했습니다. 비건 고메의 본질을 담아낸 디자인입니다.", 
+        description: "더래빗(The Rabbit)은 ‘채식과 미식의 즐거움’을 연결하는 비건 고메샵 브랜드 IP입니다. 기존의 절제와 건강 중심인 비건 문화를 넘어, 생동감 넘치는 맛과 즐거운 미식의 기준을 제안합니다.\n\n메인 캐릭터 ‘래빗’은 더래빗의 철학을 상징하는 마스코트로, 입맛을 다시며 경쾌하게 뛰어오르는 포즈를 통해 ‘비건 미식의 즐거움’을 시각화합니다. 특히 로고의 아치형 프레임은 실제 더래빗 매장의 아치형 문을 모티브로 설계되었으며, 이는 고객이 도심 속에서 비밀스러운 ‘토끼굴’로 들어서며 새로운 미식의 세계를 마주하는 경험을 상징합니다.\n\n더래빗 IP는 이러한 상징적인 아치 구조와 레트로한 무드를 바탕으로 패키지, 굿즈, 공간 브랜딩 등 온·오프라인의 다양한 접점에서 유연하게 확장 가능한 구조로 설계되었습니다.", 
         galleryImages: ['https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_therabbit%202%20(1).png'],
         client: '남미컴퍼니',
         hideMainImageInDetail: true
@@ -168,7 +174,6 @@ const App: React.FC = () => {
         hideMainImageInDetail: true,
         galleryImages: [
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.38.45.png',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-04%20(1).jpg'
         ]
       },
       {
@@ -292,6 +297,8 @@ const App: React.FC = () => {
         galleryImages: []
       }
     ];
+    }
+    return JSON.parse(savedProjects);
   });
 
   const [heroImages, setHeroImages] = useState<HeroImages>(() => {

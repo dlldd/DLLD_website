@@ -35,6 +35,13 @@ const ContactPage: React.FC = () => {
                   010. 5204. 2108
                 </p>
               </div>
+
+              <div className="pt-4">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">KakaoTalk</p>
+                <a href="http://pf.kakao.com/_uSxdpxb" target="_blank" rel="noopener noreferrer" className="text-[18px] md:text-[22px] font-bold text-black hover:text-[#EE3231] transition-colors border-b-2 border-transparent hover:border-[#EE3231] pb-1">
+                  카카오톡 상담하기
+                </a>
+              </div>
             </div>
             
             <div className="mt-20 flex gap-10">

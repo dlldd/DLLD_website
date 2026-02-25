@@ -13,7 +13,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   }, []);
 
   return (
-    <div className="w-full pt-[100px] md:pt-[158px] pb-32 animate-in fade-in duration-700">
+    <div className="w-full pt-[130px] md:pt-[180px] pb-16 animate-in fade-in duration-700">
       {/* 중앙 집중형 컨테이너 및 좌우 안전 여백 */}
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         
@@ -31,7 +31,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
         </div>
 
         {/* 헤더 섹션: 타이틀 및 설명 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-10">
           <div className="lg:col-span-8">
             {/* 모든 상세페이지 제목 폰트 크기를 20pt로 고정 */}
             <h1 className="text-[20pt] font-black uppercase tracking-tighter leading-[1.2] mb-10 adobe-font whitespace-pre-line">

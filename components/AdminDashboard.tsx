@@ -79,7 +79,20 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 md:px-12 bg-white font-sans text-black">
       <div className="flex justify-between items-center mb-8 border-b border-black pb-4">
-        <h2 className="text-3xl font-black uppercase tracking-tighter adobe-font">Studio Manager</h2>
+        <div className="flex items-center gap-4">
+          <h2 className="text-3xl font-black uppercase tracking-tighter adobe-font">Studio Manager</h2>
+          <button 
+            onClick={() => {
+              if (window.confirm('모든 데이터를 초기화하고 코드의 기본값으로 되돌리시겠습니까?')) {
+                localStorage.clear();
+                window.location.reload();
+              }
+            }}
+            className="px-3 py-1 border border-gray-300 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-all"
+          >
+            Reset to Defaults
+          </button>
+        </div>
         <button onClick={onClose} className="px-6 py-2 border-2 border-black font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white transition-all">Exit</button>
       </div>
 
