@@ -35,7 +35,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '1.5'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '2.5'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -55,11 +55,9 @@ const App: React.FC = () => {
           hideMainImageInDetail: true,
           galleryImages: [
             'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.54.56.png',
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.55.10.png',
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/refs/heads/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png',
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/4_102844.jpg',
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/SU1HXzk4MDAuanBlZw%3D%3D.jpg',
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/output_2197159711.jpg'
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/output_2197159711.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.55.10.png',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.18.13.png'
           ]
         },
         {
@@ -72,6 +70,27 @@ const App: React.FC = () => {
           client: 'GS25',
           hideMainImageInDetail: true,
           galleryImages: ['https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_gs2.png']
+        },
+        {
+          id: '18',
+          title: "아동 구강 브랜드 '리틀펄리'\n캐릭터 디자인",
+          category: WorkCategory.Character,
+          year: '2026',
+          imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-20.jpg',
+          description: "리틀펄리의 공식 캐릭터 ‘펄리’는 빛나는 진주를 모티브로 탄생한 구강 케어 수호 캐릭터로, 아이들의 치아를 충치로부터 보호하고 올바른 구강 습관을 자연스럽게 길러주기 위해 개발되었습니다. ‘펄리’는 순수하고 깨끗한 진주의 이미지를 담아 건강한 치아의 상징이자, 아이들에게 친근하게 다가가는 친구 같은 존재입니다. 작은 날개로 부드럽게 날아다니며 아이들의 곁을 지키고, 즐겁고 긍정적인 경험을 통해 스스로 치아를 관리할 수 있도록 돕습니다. 리틀펄리는 ‘펄리’를 통해 구강 관리의 중요성을 쉽고 따뜻하게 전달하며, 아이들이 건강한 미소를 오래도록 유지할 수 있도록 함께합니다.",
+          client: '리틀펄리',
+          hideMainImageInDetail: true,
+          galleryImages: [
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-13.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-14.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-16.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-17.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-18.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-19.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-20.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-21.jpg',
+            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-22.jpg'
+          ]
         },
       {
         id: '4',

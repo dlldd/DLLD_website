@@ -10,6 +10,7 @@ export interface Project {
   galleryImages?: string[];
   client?: string;
   hideMainImageInDetail?: boolean;
+  hideOverlay?: boolean;
 }
 
 export enum WorkCategory {

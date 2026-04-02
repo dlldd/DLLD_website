@@ -42,17 +42,19 @@ const ProjectCard: React.FC<{ project: Project; index: number; onClick?: () => v
         )}
         
         {/* Project Info Overlay - Minimalist style */}
-        <div className={`absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 ease-in-out ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <div className={`transform transition-transform duration-500 ${isHovered ? 'translate-y-0' : 'translate-y-4'}`}>
-            <h3 className="text-white text-lg md:text-xl font-black uppercase tracking-tight leading-tight mb-3 adobe-font px-4 whitespace-pre-line">
-              {project.title}
-            </h3>
-            <p className="text-white/80 text-[9px] uppercase font-bold tracking-[0.3em]">
-              {project.category}
-            </p>
-            <div className="mt-4 mx-auto w-8 h-[2px] bg-[#EE3231]"></div>
+        {!project.hideOverlay && (
+          <div className={`absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 ease-in-out ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`transform transition-transform duration-500 ${isHovered ? 'translate-y-0' : 'translate-y-4'}`}>
+              <h3 className="text-white text-lg md:text-xl font-black uppercase tracking-tight leading-tight mb-3 adobe-font px-4 whitespace-pre-line">
+                {project.title}
+              </h3>
+              <p className="text-white/80 text-[9px] uppercase font-bold tracking-[0.3em]">
+                {project.category}
+              </p>
+              <div className="mt-4 mx-auto w-8 h-[2px] bg-[#EE3231]"></div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
