@@ -36,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '3.8'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '4.0'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -277,11 +277,18 @@ const App: React.FC = () => {
         title: "제9회 비건페스티벌 'Vegan Now' 디자인",
         category: "Visual Identity",
         year: '2021',
-        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "coming soon",
+        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-06.jpg',
+        description: "제9회 비건페스티벌 'Vegan Now'의 비주얼 아이덴티티 및 그래픽 디자인입니다.",
         client: 'Vegan Festival Korea',
         hideMainImageInDetail: true,
-        galleryImages: []
+        galleryImages: [
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-01.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-03.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-04.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-05.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-06.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A62-07.jpg'
+        ]
       },
       {
         id: '15',
