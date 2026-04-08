@@ -355,14 +355,42 @@ const App: React.FC = () => {
   useEffect(() => localStorage.setItem(STORAGE_KEYS.ACCENT, accentImageUrl), [accentImageUrl]);
   useEffect(() => localStorage.setItem(STORAGE_KEYS.ABOUT, JSON.stringify(aboutContent)), [aboutContent]);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash || hash === '/' || hash === '/home') {
+        setCurrentView('home');
+        setSelectedProject(null);
+      } else if (hash.startsWith('/project/')) {
+        const projectId = hash.split('/project/')[1];
+        const project = projects.find(p => p.id === projectId);
+        if (project) {
+          setSelectedProject(project);
+          setCurrentView('project-detail');
+        } else {
+          window.location.hash = '#/';
+        }
+      } else {
+        const view = hash.startsWith('/') ? hash.slice(1) : hash;
+        setCurrentView(view as ViewType);
+        setSelectedProject(null);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange(); // Initial check
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [projects]);
+
   const handleNavClick = (view: string) => {
-    setCurrentView(view as ViewType);
+    window.location.hash = `#/${view}`;
     window.scrollTo(0, 0);
   };
 
   const handleProjectClick = (project: Project) => {
-    setSelectedProject(project);
-    setCurrentView('project-detail');
+    window.location.hash = `#/project/${project.id}`;
+    window.scrollTo(0, 0);
   };
 
   const renderContent = () => {
@@ -377,7 +405,7 @@ const App: React.FC = () => {
       case 'project-detail':
         return selectedProject ? <ProjectDetail project={selectedProject} onBack={() => handleNavClick('home')} /> : null;
       case 'admin-login':
-        return <AdminLogin onLogin={() => setIsAdmin(true)} onCancel={() => setCurrentView('home')} />;
+        return <AdminLogin onLogin={() => setIsAdmin(true)} onCancel={() => handleNavClick('home')} />;
       case 'admin-dashboard':
         return isAdmin ? (
           <AdminDashboard 
@@ -393,9 +421,9 @@ const App: React.FC = () => {
             onUpdateAccentImage={setAccentImageUrl}
             onUpdateAbout={setAboutContent}
             onUpdateGrowth={setGrowthStats}
-            onClose={() => setCurrentView('home')} 
+            onClose={() => handleNavClick('home')} 
           />
-        ) : <AdminLogin onLogin={() => setIsAdmin(true)} onCancel={() => setCurrentView('home')} />;
+        ) : <AdminLogin onLogin={() => setIsAdmin(true)} onCancel={() => handleNavClick('home')} />;
       default:
         return null;
     }
@@ -422,7 +450,7 @@ const App: React.FC = () => {
           {renderContent()}
         </main>
 
-        {!isMinimalView && <Footer onAdminClick={() => setCurrentView('admin-login')} />}
+        {!isMinimalView && <Footer onAdminClick={() => handleNavClick('admin-login')} />}
       </div>
     </div>
   );
