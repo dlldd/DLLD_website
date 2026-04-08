@@ -7,9 +7,10 @@ import ProjectDetail from './components/ProjectDetail';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import IntroOverlay from './components/IntroOverlay';
+import AboutPage from './components/AboutPage';
 import { Project, HeroImages, WorkCategory } from './types';
 
-export type ViewType = BaseViewType | 'project-detail' | 'admin-login' | 'admin-dashboard';
+export type ViewType = BaseViewType | 'project-detail' | 'admin-login' | 'admin-dashboard' | 'about';
 
 // 초기 이미지 URL들
 const BRAND_HERO_IMAGE_URL = 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_therabbit%2022.png';
@@ -35,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '2.5'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '3.7'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -371,6 +372,8 @@ const App: React.FC = () => {
         return <WorkGrid projects={projects} onProjectClick={handleProjectClick} />;
       case 'contact':
         return <ContactPage />;
+      case 'about':
+        return <AboutPage onNavClick={handleNavClick} />;
       case 'project-detail':
         return selectedProject ? <ProjectDetail project={selectedProject} onBack={() => handleNavClick('home')} /> : null;
       case 'admin-login':

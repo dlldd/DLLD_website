@@ -80,6 +80,18 @@ const Header: React.FC<HeaderProps> = ({ onNavClick, currentView, logoUrl }) => 
           </li>
           <li>
             <button 
+              onClick={() => onNavClick('about')} 
+              className={`text-[13px] md:text-[18px] font-black leading-none transition-all duration-500 ease-in-out ${
+                isScrolled 
+                ? (currentView === 'about' ? 'text-black/40' : 'text-white/80 hover:text-white')
+                : (currentView === 'about' ? 'text-[#EE3231]' : 'text-black/40 hover:text-black')
+              }`}
+            >
+              About
+            </button>
+          </li>
+          <li>
+            <button 
               onClick={() => onNavClick('contact')} 
               className={`text-[13px] md:text-[18px] font-black leading-none transition-all duration-500 ease-in-out ${
                 isScrolled 
