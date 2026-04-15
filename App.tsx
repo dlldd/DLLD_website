@@ -36,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '5.0'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '5.1'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -51,7 +51,7 @@ const App: React.FC = () => {
           category: WorkCategory.Character,
           year: '2026',
           imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%85%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%91%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF-20.jpg',
-          description: "리틀펄리의 공식 캐릭터 ‘펄리’는 빛나는 진주를 모티브로 탄생한 구강 케어 수호 캐릭터로, 아이들의 치아를 충치로부터 보호하고 올바른 구강 습관을 자연스럽게 길러주기 위해 개발되었습니다. ‘펄리’는 순수하고 깨끗한 진주의 이미지를 담아 건강한 치아의 상징이자, 아이들에게 친근하게 다가가는 친구 같은 존재입니다. 작은 날개로 부드럽게 날아다니며 아이들의 곁을 지키고, 즐겁고 긍정적인 경험을 통해 스스로 치아를 관리할 수 있도록 돕습니다. 리틀펄리는 ‘펄리’를 통해 구강 관리의 중요성을 쉽고 따뜻하게 전달하며, 아이들이 건강한 미소를 오래도록 유지할 수 있도록 함께합니다.",
+          description: "리틀펄리의 공식 캐릭터 ‘펄리’는 빛나는 진주를 모티브로 탄생한 구강 케어 수호 캐릭터로, 아이들의 치아를 충치로부터 보호하고 올바른 구강 습관을 자연스럽게 길러주기 위해 개발되었습니다. ‘펄리’는 순수하고 깨끗한 진주의 이미지를 담아 건강한 치아의 상징이자, 아이들에게 친근하게 다가가는 친구 같은 존재입니다.\n\n 작은 날개로 부드럽게 날아다니며 아이들의 곁을 지키고, 즐겁고 긍정적인 경험을 통해 스스로 치아를 관리할 수 있도록 돕습니다. 리틀펄리는 ‘펄리’를 통해 구강 관리의 중요성을 쉽고 따뜻하게 전달하며, 아이들이 건강한 미소를 오래도록 유지할 수 있도록 함께합니다.",
           client: '리틀펄리',
           hideMainImageInDetail: true,
           galleryImages: [
@@ -72,7 +72,7 @@ const App: React.FC = () => {
           category: WorkCategory.Brand,
           year: '2025',
           imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/gomi_tn.png',
-          description: "DLLD 디자인 스튜디오에서 따뜻하고 유쾌한 베이커리 브랜드 ‘Gomi Baker’의 브랜드 아이덴티티를 디자인했습니다.\n\n‘Gomi Baker’는 친근한 곰 캐릭터를 중심으로, 갓 구운 빵처럼 편안하고 기분 좋은 순간을 전하는 브랜드입니다. 일상 속 작은 달콤함과 여유를 전달하는 것을 핵심 가치로 삼고 있습니다.\n\n브랜드 아이덴티티는 이러한 따뜻함과 즐거움을 직관적으로 표현하는 데서 출발했습니다. 곰 캐릭터를 중심으로 한 비주얼은 부드러운 곡선과 안정감 있는 컬러 조합을 통해 편안하고 사랑스러운 인상을 전달합니다.\n\n로고타입은 볼드하면서도 유연한 형태로 설계해 친근한 에너지를 강조했으며, 슬로건과의 조합을 통해 브랜드의 달콤하고 긍정적인 무드를 직관적으로 전달합니다. 전체적인 그래픽 요소는 일관된 톤앤매너로 확장되어 ‘Gomi Baker’만의 따뜻하고 유쾌한 브랜드 경험을 완성했습니다.",
+          description: "따뜻하고 유쾌한 베이커리 브랜드 ‘Gomi Baker’의 브랜드 아이덴티티를 디자인했습니다.\n\n‘Gomi Baker’는 친근한 곰 캐릭터를 중심으로, 갓 구운 빵처럼 편안하고 기분 좋은 순간을 전하는 브랜드입니다. 일상 속 작은 달콤함과 여유를 전달하는 것을 핵심 가치로 삼고 있습니다.\n\n전체적인 그래픽 요소는 일관된 톤앤매너로 확장되어 ‘Gomi Baker’만의 따뜻하고 유쾌한 브랜드 경험을 완성했습니다.",
           client: '고미베이커',
           hideMainImageInDetail: true,
           galleryImages: [
