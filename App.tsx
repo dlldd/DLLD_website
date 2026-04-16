@@ -36,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '5.1'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '5.3'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -71,12 +71,11 @@ const App: React.FC = () => {
           title: "베이커리 '고미베이커'\n브랜딩",
           category: WorkCategory.Brand,
           year: '2025',
-          imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/gomi_tn.png',
+          imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/gomi_tn2.jpg',
           description: "따뜻하고 유쾌한 베이커리 브랜드 ‘Gomi Baker’의 브랜드 아이덴티티를 디자인했습니다.\n\n‘Gomi Baker’는 친근한 곰 캐릭터를 중심으로, 갓 구운 빵처럼 편안하고 기분 좋은 순간을 전하는 브랜드입니다. 일상 속 작은 달콤함과 여유를 전달하는 것을 핵심 가치로 삼고 있습니다.\n\n전체적인 그래픽 요소는 일관된 톤앤매너로 확장되어 ‘Gomi Baker’만의 따뜻하고 유쾌한 브랜드 경험을 완성했습니다.",
           client: '고미베이커',
           hideMainImageInDetail: true,
           galleryImages: [
-            'https://raw.githubusercontent.com/dlldd/DLLD-web/main/gomi_tn.png',
             'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%80%E1%85%A9%E1%84%86%E1%85%B5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AFq22-01.png',
             'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%80%E1%85%A9%E1%84%86%E1%85%B5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AFq22-02.png',
             'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%80%E1%85%A9%E1%84%86%E1%85%B5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5_%E1%84%91%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AFq22-03.png'
