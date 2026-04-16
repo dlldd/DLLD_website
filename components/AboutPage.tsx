@@ -49,7 +49,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavClick }) => {
               className="text-lg md:text-2xl text-gray-500 font-medium leading-relaxed break-keep"
             >
               DLLD design은 브랜드가 가진 이야기를 시각적으로 번역하는 디자인 스튜디오입니다.<br />
-              캐릭터, 브랜딩, 콘텐츠 디자인을 통해 사람들의 일상 속에 자연스럽게 스며드는 브랜드를 만듭니다.
+              로고 디자인, 캐릭터 디자인, 콘텐츠 디자인을 통해 브랜드의 이야기를 시각적으로 풀어내고, 사람들의 일상 속에 자연스럽게 스며드는 브랜드를 만듭니다.
             </motion.p>
           </motion.div>
         </div>
