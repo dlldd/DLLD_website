@@ -46,7 +46,7 @@ const App: React.FC = () => {
       localStorage.setItem(STORAGE_KEYS.VERSION, CURRENT_VERSION);
       return [
         {
-          id: '18',
+          id: '리틀펄리',
           title: "아동 구강 브랜드 '리틀펄리'\n캐릭터 디자인",
           category: WorkCategory.Character,
           year: '2026',
