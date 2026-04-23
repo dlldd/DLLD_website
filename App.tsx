@@ -36,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '5.3'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '5.9'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -201,14 +201,24 @@ const App: React.FC = () => {
       {
         id: '7',
         title: '올바른 감탄 비건장\n비주얼 아이덴티티',
-        category: WorkCategory.Graphic,
+        category: 'Visual Identity',
         year: '2025',
         imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.38.45.png',
-        description: "비건 문화의 확산을 목표로 하는 '올바른 감탄 비건장'의 통합 브랜딩입니다. 자연과 상생하는 가치를 따뜻하고 정갈한 그래픽 언어로 표현했습니다.",
+        description: "'올바른감탄비건장' 행사 아이덴티티 디자인을 진행했습니다. \n\n올바른감탄비건장은 세 개의 팀 [비건페스티벌, 올바른 농부장, 감탄장] 의 협업으로 탄생한 이름처럼, 각 주체의 정체성과 연결감을 시각적으로 풀어낸 아이덴티티입니다.\n\n포스터에는 세 팀을 상징하는 인물들이 함께 걷는 모습으로 등장하며, 각자의 역할(비건, 농부, 마켓 운영)을 나타내는 요소를 들고 하나의 방향으로 나아가는 흐름을 표현했습니다. 이는 서로 다른 가치가 모여 하나의 장(場)을 이루는 협업 구조를 직관적으로 보여줍니다.\n\n전반적인 컬러는 생동감 있는 컬러를 조합해 축제의 경쾌한 에너지를 강조했습니다. 리듬감 있는 그래픽 스타일을 통해 누구나 쉽게 인지할 수 있는 친근한 행사 이미지를 구축한 것이 특징입니다.",
         client: 'Reblank,올바른농부장,Vegan Festival Korea',
         hideMainImageInDetail: true,
         galleryImages: [
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.38.45.png',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-01.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-02.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-03.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-04.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-05.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-06.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-07.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-08.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-10.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-09.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%80%E1%85%A1%E1%86%B7%E1%84%87%E1%85%B5-11.jpg'
         ]
       },
       {
@@ -307,14 +317,20 @@ const App: React.FC = () => {
       },
       {
         id: '15',
-        title: 'Coming Soon',
-        category: "",
-        year: '',
-        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/coming%20soon.jpg',
-        description: "coming soon",
-        client: '',
+        title: '제9회 비건페스티벌 디자인',
+        category: "Visual Identity",
+        year: '2022',
+        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-05.jpg',
+        description: "제 9회 비건페스티벌 행사 아이덴티티를 디자인했습니다. \n\n“VEGAN NOW”라는 메시지를 중심으로, 비건이라는 선택을 ‘지금 당장’의 행동으로 전환시키는 데 초점을 맞춘 그래픽 아이덴티티입니다.\n\n중앙의 볼드한 타이포그래피는 하나의 덩어리처럼 뭉쳐 강한 시각적 임팩트를 만들고, “2022”, “NOW”, “MOVE NOW” 등의 키워드를 리듬감 있게 배치해 메시지가 자연스럽게 확장되도록 구성했습니다. \n\n비건이라는 주제를 어렵거나 무겁게 느끼지 않도록, 누구나 쉽게 이해하고 편하게 다가올 수 있는 캐주얼한 톤으로 풀어낸 것이 특징입니다.",
+        client: 'Vegan Festival Korea',
         hideMainImageInDetail: true,
-        galleryImages: []
+        galleryImages: [
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-01.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-03.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-04.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-05.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-07.jpg'
+        ]
       },
       {
         id: '14',
