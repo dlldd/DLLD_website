@@ -37,7 +37,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '7.3'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '7.4'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -163,6 +163,21 @@ const App: React.FC = () => {
         galleryImages: [
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-01.jpg',
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%B5-02.jpg'
+        ]
+      },
+      {
+        id: '14',
+        title: "요거트퍼플 패키지디자인",
+        category: WorkCategory.Package,
+        year: '2024',
+        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_5.jpg',
+        description: "브랜드의 이름처럼 ‘보라색’에서 출발해, 상큼함과 달콤함이 공존하는 요거트 아이스크림의 이미지를 시각적으로 풀어낸 패키지 디자인입니다.\n부드러운 그라데이션과 위트 있는 타이포를 활용해 가볍고 경쾌한 무드를 강조하고, 다양한 토핑과 자연스럽게 어우러지도록 높은 활용성을 고려해 설계했습니다.",
+        client: '에이앤디',
+        hideMainImageInDetail: true,
+        galleryImages: [
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_3.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_4.jpg',
+          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_5.jpg'
         ]
       },
       {
@@ -331,21 +346,6 @@ const App: React.FC = () => {
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-04.jpg',
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-05.jpg',
           'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_%E1%84%87%E1%85%B5%E1%84%80%E1%85%A5%E1%86%AB%E1%84%91%E1%85%A6-07.jpg'
-        ]
-      },
-      {
-        id: '14',
-        title: "요거트퍼플 패키지디자인",
-        category: WorkCategory.Package,
-        year: '2024',
-        imageUrl: 'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_5.jpg',
-        description: "브랜드의 이름처럼 ‘보라색’에서 출발해, 상큼함과 달콤함이 공존하는 요거트 아이스크림의 이미지를 시각적으로 풀어낸 패키지 디자인입니다.\n부드러운 그라데이션과 위트 있는 타이포를 활용해 가볍고 경쾌한 무드를 강조하고, 다양한 토핑과 자연스럽게 어우러지도록 높은 활용성을 고려해 설계했습니다.",
-        client: '에이앤디',
-        hideMainImageInDetail: true,
-        galleryImages: [
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_3.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_4.jpg',
-          'https://raw.githubusercontent.com/dlldd/DLLD-web/main/yp_5.jpg'
         ]
       },
       {
