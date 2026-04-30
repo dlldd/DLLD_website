@@ -138,6 +138,8 @@ const ServicesPage: React.FC = () => {
         <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">Services</h1>
         <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto font-medium leading-relaxed">
           DLLD는 각 분야의 전문성을 바탕으로 브랜드의 가치를 시각적으로 극대화하는 디자인 솔루션을 제공합니다.
+          <br />
+          작은 아이디어부터 브랜드까지, 함께 만들어가고 싶다면 편하게 연락주세요.
         </p>
       </motion.div>
 
