@@ -36,7 +36,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '5.9'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '6.0'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -46,7 +46,7 @@ const App: React.FC = () => {
       localStorage.setItem(STORAGE_KEYS.VERSION, CURRENT_VERSION);
       return [
         {
-          id: '리틀펄리',
+          id: '18',
           title: "아동 구강 브랜드 '리틀펄리'\n캐릭터 디자인",
           category: WorkCategory.Character,
           year: '2026',
@@ -395,7 +395,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
+      const hash = decodeURIComponent(window.location.hash.replace('#', ''));
       if (!hash || hash === '/' || hash === '/home') {
         setCurrentView('home');
         setSelectedProject(null);
