@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export type ViewType = 'home' | 'works' | 'about' | 'contact';
+export type ViewType = 'home' | 'works' | 'about' | 'services' | 'contact';
 
 interface HeaderProps {
   onNavClick: (view: ViewType) => void;
@@ -88,6 +88,18 @@ const Header: React.FC<HeaderProps> = ({ onNavClick, currentView, logoUrl }) => 
               }`}
             >
               About
+            </button>
+          </li>
+          <li>
+            <button 
+              onClick={() => onNavClick('services')} 
+              className={`text-[13px] md:text-[18px] font-black leading-none transition-all duration-500 ease-in-out ${
+                isScrolled 
+                ? (currentView === 'services' ? 'text-black/40' : 'text-white/80 hover:text-white')
+                : (currentView === 'services' ? 'text-[#EE3231]' : 'text-black/40 hover:text-black')
+              }`}
+            >
+              Services
             </button>
           </li>
           <li>

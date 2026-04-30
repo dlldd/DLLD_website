@@ -8,6 +8,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import IntroOverlay from './components/IntroOverlay';
 import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
 import { Project, HeroImages, WorkCategory } from './types';
 
 export type ViewType = BaseViewType | 'project-detail' | 'admin-login' | 'admin-dashboard' | 'about';
@@ -36,7 +37,7 @@ const App: React.FC = () => {
     VERSION: 'dlld_data_version'
   };
 
-  const CURRENT_VERSION = '6.0'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
+  const CURRENT_VERSION = '6.9'; // 버전 숫자를 올리면 로컬 스토리지를 초기화하고 새 코드를 반영합니다.
 
   const [projects, setProjects] = useState<Project[]>(() => {
     const savedVersion = localStorage.getItem(STORAGE_KEYS.VERSION);
@@ -440,6 +441,8 @@ const App: React.FC = () => {
         return <ContactPage />;
       case 'about':
         return <AboutPage onNavClick={handleNavClick} />;
+      case 'services':
+        return <ServicesPage />;
       case 'project-detail':
         return selectedProject ? <ProjectDetail project={selectedProject} onBack={() => handleNavClick('home')} /> : null;
       case 'admin-login':
