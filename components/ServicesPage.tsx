@@ -8,6 +8,7 @@ type ServiceCategory = 'Logo Design' | 'Branding' | 'Character Design' | 'Packag
 interface ServiceContent {
   title: string;
   description: string;
+  price: string;
   features: string[];
   deliverables: string[];
   images: string[];
@@ -18,6 +19,7 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Logo Design': {
     title: 'Logo Design',
     description: '소규모 창업자와 1인 브랜드를 위한 로고 디자인\n카페, 소형 매장, 개인 브랜드에 적합합니다',
+    price: '₩300,000~',
     features: [
       '브랜드 성격을 반영한 로고 컨셉 도출',
       '다양한 환경에서 활용 가능한 심플한 구조',
@@ -37,6 +39,7 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Branding': {
     title: 'Branding',
     description: '브랜드의 방향과 아이덴티티를 정리하는 브랜딩\n신규 론칭, 리브랜딩, 확장을 준비하는 브랜드에 추천합니다',
+    price: '₩1,200,000~',
     features: [
       '브랜드 방향 및 컨셉 정의',
       '일관된 시각 톤앤매너 구축',
@@ -57,6 +60,7 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Character Design': {
     title: 'Character Design',
     description: '브랜드의 개성을 표현하는 캐릭터 디자인\n굿즈, SNS, 콘텐츠 확장을 고려한 브랜드에 적합합니다',
+    price: '₩1,500,000~',
     features: [
       '브랜드 성격을 반영한 캐릭터 컨셉 설계',
       '다양한 활용을 고려한 확장형 디자인',
@@ -77,6 +81,7 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Package Design': {
     title: 'Package Design',
     description: '제품의 가치를 전달하는 패키지 디자인\n카페, F&B 브랜드, 제품 출시를 준비하는 브랜드에 적합합니다',
+    price: '₩400,000~',
     features: [
       '제품과 타겟에 맞는 패키지 컨셉 설계',
       '브랜드에 맞는 그래픽 및 컬러 적용',
@@ -185,7 +190,16 @@ const ServicesPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
+            <div className="pt-4">
+              <div className="flex items-baseline gap-3">
+                <span className="text-xs uppercase font-black tracking-[0.2em] text-[#EE3231]">Estimate from</span>
+                <span className="text-2xl md:text-3xl font-black text-black tracking-tight">
+                  {servicesData[activeTab].price}
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4">
               <div className="space-y-6">
                 <h3 className="text-xs uppercase font-black tracking-[0.2em] text-gray-400">Key Features</h3>
                 <ul className="space-y-4">
