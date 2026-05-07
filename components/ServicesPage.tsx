@@ -19,7 +19,7 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Logo Design': {
     title: 'Logo Design',
     description: '소규모 창업자와 1인 브랜드를 위한 로고 디자인\n카페, 소형 매장, 개인 브랜드에 적합합니다',
-    price: '₩300,000~',
+    price: '₩400,000~',
     features: [
       '브랜드 성격을 반영한 로고 컨셉 도출',
       '다양한 환경에서 활용 가능한 심플한 구조',
@@ -39,17 +39,14 @@ const servicesData: Record<ServiceCategory, ServiceContent> = {
   'Branding': {
     title: 'Branding',
     description: '브랜드의 방향과 아이덴티티를 정리하는 브랜딩\n신규 론칭, 리브랜딩, 확장을 준비하는 브랜드에 추천합니다',
-    price: '₩1,200,000~',
+    price: '₩2,000,000~',
     features: [
       '브랜드 방향 및 컨셉 정의',
-      '일관된 시각 톤앤매너 구축',
-      '온·오프라인 전반에 적용 가능한 디자인 시스템'
+      '일관된 시각 톤앤매너 구축'
     ],
     deliverables: [
       '브랜드 로고 및 기본 아이덴티티',
-      '컬러 및 타이포그래피 가이드',
-      '기본 브랜드 가이드 (간단 매뉴얼)',
-      '패턴 개발'
+      '컬러 및 타이포그래피 가이드'
     ],
     images: [
       'https://raw.githubusercontent.com/dlldd/DLLD-web/main/%E1%84%82%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9_therabbit%2022.png',
