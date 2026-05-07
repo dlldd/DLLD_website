@@ -39,10 +39,24 @@ const Header: React.FC<HeaderProps> = ({ onNavClick, currentView, logoUrl }) => 
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out flex justify-between items-stretch border-b ${headerBgStyles}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out flex flex-col md:flex-row justify-between items-center md:items-stretch border-b ${headerBgStyles}`}
     >
-      {/* 로고 영역: 크기와 패딩 전환 */}
-      <div className={`flex items-center px-6 md:px-12 transition-all duration-700 ease-in-out ${logoPadding}`}>
+      {/* Mobile Logo: Center - Only visible on mobile */}
+      <div className={`md:hidden flex flex-col items-center w-full transition-all duration-700 ease-in-out ${isScrolled ? 'pt-2 pb-1' : 'pt-5 pb-2'}`}>
+        <button 
+          onClick={() => onNavClick('home')} 
+          className="flex items-center focus:outline-none"
+        >
+          <img 
+            src="https://raw.githubusercontent.com/dlldd/DLLD-web/main/DLLD%E1%84%85%E1%85%A9%E1%84%80%E1%85%A92.png" 
+            alt="DLLD Logo" 
+            className={`w-auto object-contain transition-all duration-700 ease-in-out ${logoFilter} ${isScrolled ? 'h-[28px]' : 'h-[44px]'}`} 
+          />
+        </button>
+      </div>
+
+      {/* Desktop Logo Area: Hidden on mobile */}
+      <div className={`hidden md:flex items-center px-6 md:px-12 transition-all duration-700 ease-in-out ${logoPadding}`}>
         <button 
           onClick={() => onNavClick('home')} 
           className="flex items-center focus:outline-none"
@@ -64,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ onNavClick, currentView, logoUrl }) => 
       </div>
       
       {/* 네비게이션 영역: 하단 정렬 및 패딩 전환 */}
-      <nav className={`flex items-end px-6 md:px-12 transition-all duration-700 ease-in-out ${navPadding}`}>
+      <nav className={`flex items-center md:items-end px-6 md:px-12 transition-all duration-700 ease-in-out ${isScrolled ? 'pb-2 md:pb-3' : 'pb-4 md:pb-5'}`}>
         <ul className={`flex items-center space-x-8 md:space-x-14 font-black tracking-widest uppercase transition-colors duration-700 ${textColor}`}>
           <li>
             <button 
